@@ -6,6 +6,7 @@ Entity* initEntity(char* spriteSheetPath, int framesPerRow, int framesPerColumn)
   Vector2 position = { 15.0f, 15.0f };
   Entity *entity = malloc(sizeof(Entity));
   entity->position = position;
+  entity->state = IDLE;
   entity->spriteSheet = initSpriteSheet(spriteSheetPath, framesPerRow, framesPerColumn);
   return entity;
 }
