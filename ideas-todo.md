@@ -7,3 +7,4 @@
 - [x] Criar classe de entidades.
 - [x] Adicionar mudança de sprites na classe de entidades.
 - [ ] Adicionar comportamentos de movimento na classe de entidades.
+- [ ] Adicionar spriteMap para lidar com diferents animações.

@@ -4,8 +4,8 @@
 #include "src/entity.h"
 
 int main() {
-  const int SCREEN_WIDTH = 600;
-  const int SCREEN_HEIGHT = 400;
+  const int SCREEN_WIDTH = 800;
+  const int SCREEN_HEIGHT = 600;
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "RTS");
   SetTargetFPS(60);
 
@@ -14,43 +14,12 @@ int main() {
   while (!WindowShouldClose()) {
 
     Vector2 mousePos = GetMousePosition();
-
-    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-      player->state = WALKING;
+    if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
+      Color color = { 0x00, 0x00, 0x00, 0x93 };
+      DrawCircleV(mousePos, 10, color);
     }
 
-    if (
-        player->state == WALKING &&
-        player->position.x <= mousePos.x
-       ) {
-      player->position.x += 2;
-    }
-
-    if (
-        player->state == WALKING &&
-        player->position.x >= mousePos.x
-       ) {
-      player->position.x -= 2;
-    }
-
-    if (
-        player->state == WALKING &&
-        player->position.y >= mousePos.y
-       ) {
-      player->position.y -= 2;
-    }
-
-    if (
-        player->state == WALKING &&
-        player->position.y <= mousePos.y
-       ) {
-      player->position.y += 2;
-    }
-
-    if (player->position.x == mousePos.x && player->position.y == mousePos.y) {
-      player->state = IDLE;
-    }
-
+    updateEntity(player, mousePos);
     BeginDrawing();
       ClearBackground(WHITE);
       renderEntity(player);

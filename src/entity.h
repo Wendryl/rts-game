@@ -9,14 +9,26 @@ typedef enum {
   WALKING = 2,
 } State;
 
+typedef enum {
+  UP = 1,
+  DOWN = 2,
+  LEFT = 3,
+  RIGHT = 4,
+} Direction;
+
 typedef struct {
   Vector2 position;
+  Vector2 targetPosition;
+  Vector2 velocity;
+  Vector2 center;
 	Spritesheet* spriteSheet;
   State state;
+  Direction direction;
 } Entity;
 
 Entity* initEntity(char* spriteSheetPath, int framesPerRow, int framesPerColumn);
 Spritesheet* initSpriteSheet(char* spriteSheetPath, int framesPerRow, int framesPerColumn);
 void renderEntity(Entity* entity);
+void updateEntity(Entity* entity, Vector2 mousePos);
 
 #endif
