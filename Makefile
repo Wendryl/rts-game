@@ -1,5 +1,5 @@
 make:
-	cc main.c src/*.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o main
-	./main
+	cc main.c src/*.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o build/main
+	./build/main
 clean:
-	rm ./main
+	rm ./build/main
