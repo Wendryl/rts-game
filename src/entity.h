@@ -7,6 +7,7 @@
 typedef enum {
   IDLE = 1,
   WALKING = 2,
+  ATTACKING = 3,
 } State;
 
 typedef enum {
