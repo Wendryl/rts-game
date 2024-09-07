@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "./spritesheet.h"
+#include <stdbool.h>
 
 #ifndef ENTITY_H
 #define ENTITY_H
@@ -18,12 +19,15 @@ typedef enum {
 } Direction;
 
 typedef struct {
+  Vector2 center;
   Vector2 position;
   Vector2 targetPosition;
   Vector2 velocity;
-	SpriteSheet* spriteSheet;
+  Rectangle collisionBox;
+  SpriteSheet* spriteSheet;
   State state;
   Direction direction;
+  bool debugMode;
 } Entity;
 
 Entity* initEntity(char* spriteSheetPath, int framesPerRow, int framesPerColumn);
