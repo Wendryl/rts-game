@@ -21,14 +21,12 @@ typedef struct {
   Vector2 position;
   Vector2 targetPosition;
   Vector2 velocity;
-  Vector2 center;
-	Spritesheet* spriteSheet;
+	SpriteSheet* spriteSheet;
   State state;
   Direction direction;
 } Entity;
 
 Entity* initEntity(char* spriteSheetPath, int framesPerRow, int framesPerColumn);
-Spritesheet* initSpriteSheet(char* spriteSheetPath, int framesPerRow, int framesPerColumn);
 void renderEntity(Entity* entity);
 void updateEntity(Entity* entity, Vector2 mousePos);
 

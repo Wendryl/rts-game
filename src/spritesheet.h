@@ -21,6 +21,7 @@ typedef struct {
   int framesPerSecond;
 	int frameCounter;
 	Rectangle currentFrame;
-} Spritesheet;
+} SpriteSheet;
 
+SpriteSheet* initSpriteSheet(char* spriteSheetPath, int framesPerRow, int framesPerColumn);
 #endif
