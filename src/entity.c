@@ -129,5 +129,7 @@ void updateEntity(Entity* entity, Vector2 mousePos) {
   handleState(entity, mousePos);
   setVelocity(entity);
   setCollisionBox(entity);
-  TraceLog(LOG_INFO, toString(entity));
+  if (entity->debugMode) {
+    TraceLog(LOG_INFO, toString(entity));
+  }
 }
